@@ -4,3 +4,6 @@ After downloading the project you can perform the following:
 1. Create a database
 2. Run the php artisan migrate in your terminal to migrate the databases
 3. Run the php artisan serve to start the application
+
+
+This application makes use of the Sb Admin 2 free  bootstrap template for it's front end
