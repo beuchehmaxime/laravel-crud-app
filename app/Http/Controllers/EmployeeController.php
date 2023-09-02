@@ -15,7 +15,9 @@ class EmployeeController extends Controller
     public function index()
     {
         $employees = Employee::latest('id')->get();
-       return view('index', compact('employees'));
+        $empcounts = Employee::count();
+        $empsalary = Employee::sum('salary');
+       return view('index', compact('employees','empcounts','empsalary'));
     }
 
     /**
@@ -54,7 +56,7 @@ class EmployeeController extends Controller
             'startdate' => $request->startdate,
             'salary' => $request->salary,
         ]);
-        return redirect()->back()->with('success','Employee added successfully');
+        return redirect()->back()->with('success','Employee added successfully'); 
     }
 
     /**
